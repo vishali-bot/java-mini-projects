@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class bank {
+    int pin, amount;
+    int balance = 10000;
+    String choice;
+
+    void display() {
+        if (pin == 2812) {
+            if (amount > balance) {
+                System.out.println("Insufficient balance!");
+            } else {
+                balance -= amount; 
+                System.out.println("Transaction completed.");
+                if (choice.equalsIgnoreCase("yes")) {
+                    System.out.println("Current balance: " + balance);
+                }
+            }
+        } else {
+            System.out.println("Invalid pin! Transaction denied.");
+        }
+    }
+}
+class main{
+    public static void main(String[] args) {
+        Scanner v = new Scanner(System.in);
+        bank b1 = new bank();
+
+        System.out.print("Enter your pin: ");
+        b1.pin = v.nextInt();
+
+        System.out.print("Enter amount to withdraw: ");
+        b1.amount = v.nextInt();
+
+        v.nextLine(); 
+
+        System.out.print("Do you want check balance? (yes/no): ");
+        b1.choice = v.nextLine();
+
+        b1.display();
+
+        v.close();
+    }
+}
