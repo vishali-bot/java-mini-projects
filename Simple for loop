@@ -1,0 +1,27 @@
+//New year count-down 
+
+import java.util.*;
+
+public class Main{
+	public static void main(String[] args) throws InterruptedException {
+		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Countdown starts from?:");
+		int start = sc.nextInt();
+		
+		System.out.println("Countdown ends at?:");
+		int end = sc.nextInt();
+		
+		for(int i=start;i>=end;i--) {
+			System.out.println(i);
+			//Execute code at certain amount of time
+			Thread.sleep(1000);
+			
+		}
+	
+		System.out.println("happy new year!");
+		
+	}
+
+}
