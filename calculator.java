@@ -1,5 +1,6 @@
+// Mini Calculator
 import java.util.*;
-public class cf {
+public class calculator {
 	
 	public static void main(String[] args) {
 		double a,b;
@@ -17,7 +18,10 @@ public class cf {
 		case '+' -> System.out.println(a+b);
 		case '-' -> System.out.println(a-b);
 		case '*' -> System.out.println(a*b);
-		case '/' -> System.out.println(a/b);
+		case '/' -> {
+   			 if (b == 0) System.out.println("Error: Division by zero!");
+    			else System.out.println(a / b);
+		}
 		case '^' -> System.out.println(Math.pow(a, b));
 		
 		}
@@ -25,3 +29,4 @@ public class cf {
 	}
 	
 }
+
