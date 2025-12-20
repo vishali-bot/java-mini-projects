@@ -1,3 +1,4 @@
+//Employee basic salary details
 import java.util.*;
 public class emp {
 	String name,id;
@@ -44,3 +45,4 @@ class Main{
 		System.out.print("Program ended");
 	}
 }
+
