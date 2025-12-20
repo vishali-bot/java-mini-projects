@@ -1,3 +1,4 @@
+//Number Guessing Game
 import java.util.*;
 
 public class NumberGuess {
@@ -30,4 +31,5 @@ public class NumberGuess {
         System.out.println("You won!");
         sc.close();
     }
+
 }
