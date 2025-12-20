@@ -1,0 +1,29 @@
+//Nested loop in matrix
+
+import java.util.*;
+
+public class Main{
+	public static void main(String[] args) throws InterruptedException {
+		
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Enter the $ of rows:");
+		int rows = sc.nextInt();
+		
+		
+		System.out.print("Enter the symbol to use:");
+		char symbol = sc.next().charAt(0);
+		
+		for(int i = 1; i <=  rows; i++ ) {
+			for(int j=1; j <= i; j++) {
+			System.out.print(symbol +" ");
+		}
+		System.out.println();
+		}
+		
+		
+	sc.close();
+		
+	}
+
+}
