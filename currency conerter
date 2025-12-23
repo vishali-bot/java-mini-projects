@@ -1,0 +1,63 @@
+//camount = converted amount
+//gamount =given amount
+
+import java.util.*;
+
+public class currencyConverter {
+    public static void main(String[] args) {
+
+        double gamount, camount;
+        String from, to;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("---Currency Converter---");
+
+        System.out.println("\nOptions: INR USD EUR JPY GBP AUD CAD");
+
+        System.out.print("\nEnter the amount: ");
+        gamount = sc.nextDouble();
+        
+sc.nextLine();
+
+        System.out.print("\nConvert FROM: ");
+        from = sc.nextLine();
+
+        System.out.print("\nConvert TO: ");
+        to = sc.nextLine();
+
+        // FROM → INR
+        double inrAmount = switch (from.toUpperCase()) {
+
+            case "INR" -> gamount;
+            case "USD" -> gamount * 83.25;
+            case "EUR" -> gamount * 89.50;
+            case "JPY" -> gamount * 0.56;
+            case "GBP" -> gamount * 105.50;
+            case "AUD" -> gamount * 55.20;
+            case "CAD" -> gamount * 61.40;
+
+            default -> throw new IllegalArgumentException("Invalid FROM currency");
+        };
+
+        // INR → TO
+        camount = switch (to.toUpperCase()) {
+
+            case "INR" -> inrAmount;
+            case "USD" -> inrAmount / 83.25;
+            case "EUR" -> inrAmount / 89.50;
+            case "JPY" -> inrAmount / 0.56;
+            case "GBP" -> inrAmount / 105.50;
+            case "AUD" -> inrAmount / 55.20;
+            case "CAD" -> inrAmount / 61.40;
+
+            default -> throw new IllegalArgumentException("Invalid TO currency");
+        };
+
+        // Output
+        System.out.println("\nConverted: " + gamount + " " + from.toUpperCase()
+                + " = " + String.format("%.2f", camount) + " " + to.toUpperCase());
+
+        sc.close();
+    }
+}
